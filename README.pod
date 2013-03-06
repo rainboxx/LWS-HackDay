@@ -1,0 +1,58 @@
+=head1 NAME
+
+LWS::HackDay - A Paymill's webhooks consuming Catalyst based application
+
+=head1 SYNOPSIS
+
+    script/lws_hackday_server.pl
+
+=head1 DESCRIPTION
+
+A simple application made during the L<London Websummit Hack Day 2013|http://lwshackday.eventbrite.com>
+that receives webhooks from L<Paymill|https://www.paymill.com> to C</hook>, saves this to the
+database, sends a text message through L<Twilio|https://www.twilio.com> and a push notification
+through L<Pusher|http://pusher.com>.
+
+All retrieved webhooks are returned when accessing C</> as JSONP.
+
+This has been open sourced as a small show case.  There has also been
+a frontend that receives the push notifications and shows some graphs.
+This might also be open sourced by L<Tom Arnfeld|http://www.tarnfeld.com>.
+
+=head1 INSTALLATION
+
+I assume you already have Perl >= 5.10.1 installed.  The higher
+the better!  (I used v5.16.1.)
+
+Download the app and C<cd> into its directory.  Then execute the
+following two commands, which will install L<cpanm>, a much better
+and faster version than C<cpan>, and all dependencies of this app:
+
+  % curl -L http://cpanmin.us | perl - --self-upgrade
+  % cpanm -n --installdeps .
+
+Now you should be able to start the integrated server with the
+following command:
+
+  % script/lws_hackday_server.pl
+
+Now access it through your favorite browser on L<http://localhost:3000>.
+
+=head1 CONFIGURATION
+
+To configure this app to carry the correct API credentials, simply copy
+C<lws_hackday.json> to C<lws_hackday_local.json> and paste in all
+your credentials.  Restart the app if it's already running!
+
+=head1 SEE ALSO
+
+L<LWS::HackDay::Controller::Root>, L<Catalyst>, L<WWW::Pusher>, L<WWW::Twilio::API>
+
+=head1 AUTHOR
+
+Matthias Dietrich
+
+=head1 LICENSE
+
+This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.

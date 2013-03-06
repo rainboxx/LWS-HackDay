@@ -1,0 +1,21 @@
+{
+    "Model::Hooks": {
+        "twilio_sid":   "",
+        "twilio_token": "",
+        "from":         "44...",
+        "to":           "+44..."
+    },
+    "Model::Push": {
+        "auth_key": "",
+        "secret":   "",
+        "app_id":   "",
+        "channel":  ""
+    },
+    "Model::DB": {
+        "connect_info": {
+            "dsn": "dbi:Pg:dbname=lwshackday;host=localhost;port=5432",
+            "user": "postgres",
+            "password": "",
+        }
+    }
+}
